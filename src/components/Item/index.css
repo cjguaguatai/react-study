@@ -1,0 +1,9 @@
+.li .btn {
+  display: none;
+}
+.li:hover {
+  background-color: #cccccc;
+}
+.li:hover .btn {
+  display: block;
+}
