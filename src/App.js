@@ -39,7 +39,7 @@ class App extends React.Component {
         <div className="todo-wrap">
           <Header addTodos={this.addTodos}/>
           <List todos={todos} checkedChange={this.changeDone}/>
-          <Footer/>
+          <Footer todos={todos}/>
         </div>
       </div>
     );
