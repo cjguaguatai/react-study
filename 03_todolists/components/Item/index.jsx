@@ -6,6 +6,11 @@ export default class Item extends Component {
       this.props.checkedChange(id);
     };
   };
+  handleDel=(id)=>()=>{
+    this.props.handleDel(id);
+  }
+ 
+
   render() {
     const { content, done, id } = this.props;
     return (
@@ -13,12 +18,12 @@ export default class Item extends Component {
         <label>
           <input
             type="checkbox"
-            defaultChecked={done}
+            checked={done}
             onChange={this.checkedChange(id)}
           />
           <span>{content}</span>
         </label>
-        <button className="btn btn-danger">删除</button>
+        <button className="btn btn-danger " onClick={this.handleDel(id)}>删除</button>
       </li>
     );
   }
