@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import Search from './components/Search';
+import List from './components/List';
 export default class App extends Component {
-  getStudentData = () => {
-    axios.get('http://localhost:5000/students').then(
-      (res) => {},
-      (req) => {},
-    );
-  };
   render() {
-    return <div>App</div>;
+    return (
+      <div className="container">
+        <Search />
+        <List />
+      </div>
+    );
   }
 }
