@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 export default class Search extends Component {
+  // state ={
+  //   users:[]
+  // }
   search = () => {
     const {
       keyWordNode: { value },
     } = this;
+    this.props.updateAppState({ isFirst: false, isLoading: true });
     axios.get(`http://localhost:3000/search/users?q=${value}`).then(
       (res) => {
-        console.log('res', res);
+        // this.setState({
+        //   users: res.data.items,
+        // });
+        // console.log(this.state.users);
+        this.props.updateAppState({
+          isLoading: false,
+          userList: res.data.items,
+        });
       },
       (req) => {
-        console.log('req', req);
+        this.props.updateAppState({
+          isLoading: false,
+          err: req,
+        });
       },
     );
   };
