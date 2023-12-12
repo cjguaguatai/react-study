@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Header from './components/Header';
-import MyNavLink from './components/MyNavLink';
 import {  Route, NavLink } from 'react-router-dom';
 export default class App extends Component {
   render() {
@@ -26,14 +25,12 @@ export default class App extends Component {
               Home
             </a> */}
                 {/* 在react中靠路由链接实现切换组件 */}
-                {/* <NavLink activeClassName='click' className="list-group-item" to="/about">
+                <NavLink activeClassName='click' className="list-group-item" to="/about">
                   About
                 </NavLink>
                 <NavLink activeClassName='click' className="list-group-item" to="/home">
                   Home
-                </NavLink> */}
-                <MyNavLink to='/about'>About</MyNavLink>
-                <MyNavLink to='/home'>Home</MyNavLink>
+                </NavLink>
               </div>
             </div>
             <div className="col-xs-6">
