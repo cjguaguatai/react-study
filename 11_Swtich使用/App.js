@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Header from './components/Header';
 import MyNavLink from './components/MyNavLink';
-import {  Route ,Switch,Redirect} from 'react-router-dom';
+import {  Route, NavLink ,Switch} from 'react-router-dom';
 export default class App extends Component {
   render() {
     return (
@@ -42,8 +42,8 @@ export default class App extends Component {
                   {/* <h3>我是Home的内容</h3> */}
                 <Switch>
                   <Route path="/about" component={About} />
-                  <Route path="/home"  component={Home} />
-                  <Redirect to='/about' />
+                  <Route path="/about" component={Home} />
+                  <Route path="/home" component={Home} />
                 </Switch>
                 </div>
               </div>
