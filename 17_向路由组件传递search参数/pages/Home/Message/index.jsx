@@ -17,20 +17,7 @@ export default class Message extends Component {
           {messageArr.map((ele) => {
             return (
               <li key={ele.id}>
-                {/* params参数 */}
-                {/* <Link to={`/home/message/detail/${ele.id}/${ele.title}`}>{ele.title}</Link> */}
-                {/* search参数 */}
-                {/* <Link
-                  to={`/home/message/detail?id=${ele.id}&title=${ele.title}`}
-                >
-                  {ele.title}
-                </Link> */}
-                {/* state参数 */}
-                 <Link
-                  to={{pathname: '/home/message/detail', state: { id: ele.id, title: ele.title}}}
-                >
-                  {ele.title}
-                </Link>
+                <Link to={`/home/message/detail?id=${ele.id}&title=${ele.title}`}>{ele.title}</Link>
               </li>
             );
           })}
@@ -41,9 +28,7 @@ export default class Message extends Component {
         <hr />
         {/* params参数 */}
         {/* <Route path="/home/message/detail/:id/:title" component={Detail} /> */}
-        {/* search参数 */}
-        {/* <Route path="/home/message/detail" component={Detail} /> */}
-        {/* state参数 */}
+          {/* search参数 */}
         <Route path="/home/message/detail" component={Detail} />
 
       </div>
